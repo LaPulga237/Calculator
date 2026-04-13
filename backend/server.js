@@ -3,10 +3,13 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const historyRoutes = require('./routes/historyRoutes');
 
-const app = express();
-app.use(cors());
-app.use(express.json());
 require('dotenv').config();
+
+const app = express();
+app.use(cors({
+  origin: process.env.FRONTEND_URL
+}));
+app.use(express.json());
 
 // Connect to MongoDB (local instance)
 mongoose.connect(process.env.Mongo_URI, {
