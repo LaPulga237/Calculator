@@ -1,0 +1,114 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  padding: 20px;
+  position: relative;
+}
+
+.history-panel {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 280px;
+  max-height: 70vh;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.95), rgba(118, 75, 162, 0.95));
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.2);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.history-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+}
+
+.history-panel h3 {
+  color: white;
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.history-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: calc(70vh - 120px);
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.history-panel ul::-webkit-scrollbar {
+  width: 6px;
+}
+
+.history-panel ul::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+}
+
+.history-panel ul::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+  border-radius: 3px;
+}
+
+.history-panel li {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  margin: 8px 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.2s ease;
+  font-size: 14px;
+  word-break: break-all;
+}
+
+.history-panel li:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateX(5px);
+}
+
+.clear-history-btn {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(145deg, #e74c3c, #c0392b);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 1;
+  margin-top: 15px;
+}
+
+.clear-history-btn:hover {
+  background: linear-gradient(145deg, #c0392b, #a93226);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.clear-history-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
